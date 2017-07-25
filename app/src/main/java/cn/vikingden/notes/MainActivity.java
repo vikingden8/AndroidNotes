@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -57,6 +58,9 @@ public class MainActivity extends ListActivity {
             prefixWithSlash = prefix + "/";
         }
 
+        Log.i("AndroidNotes", "prefix : " + prefix ) ;
+        Log.i("AndroidNotes", "prefixWithSlash : " + prefixWithSlash ) ;
+
         int len = list.size();
 
         Map<String, Boolean> entries = new HashMap<>();
@@ -64,16 +68,11 @@ public class MainActivity extends ListActivity {
         for (int i = 0; i < len; i++) {
             ResolveInfo info = list.get(i);
             CharSequence labelSeq = info.loadLabel(pm);
-            String label = labelSeq != null
-                    ? labelSeq.toString()
-                    : info.activityInfo.name;
+            String label = labelSeq != null ? labelSeq.toString() : info.activityInfo.name;
 
             if (prefixWithSlash.length() == 0 || label.startsWith(prefixWithSlash)) {
-
                 String[] labelPath = label.split("/");
-
                 String nextLabel = prefixPath == null ? labelPath[0] : labelPath[prefixPath.length];
-
                 if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
                     addItem(myData, nextLabel, activityIntent(
                             info.activityInfo.applicationInfo.packageName,
@@ -92,14 +91,13 @@ public class MainActivity extends ListActivity {
         return myData;
     }
 
-    private final static Comparator<Map<String, Object>> sDisplayNameComparator =
-            new Comparator<Map<String, Object>>() {
-                private final Collator collator = Collator.getInstance();
+    private final static Comparator<Map<String, Object>> sDisplayNameComparator = new Comparator<Map<String, Object>>() {
+        private final Collator collator = Collator.getInstance();
 
-                public int compare(Map<String, Object> map1, Map<String, Object> map2) {
-                    return collator.compare(map1.get("title"), map2.get("title"));
-                }
-            };
+        public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+            return collator.compare(map1.get("title"), map2.get("title"));
+        }
+    };
 
     protected Intent activityIntent(String pkg, String componentName) {
         Intent result = new Intent();
