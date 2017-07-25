@@ -12,10 +12,22 @@
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ************************************* -->
+        <!--      INTENT PACKAGE SAMPLES      -->
+        <!-- ************************************* -->
+
+        <activity android:name=".intent.ResolveActivity" android:label="@string/activity_intent_resolve">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
