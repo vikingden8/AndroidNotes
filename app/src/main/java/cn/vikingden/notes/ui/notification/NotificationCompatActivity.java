@@ -7,10 +7,13 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import cn.vikingden.notes.MainActivity;
 import cn.vikingden.notes.R;
+import cn.vikingden.notes.intent.ResolveActivity;
 
 public class NotificationCompatActivity extends AppCompatActivity {
 
@@ -19,18 +22,20 @@ public class NotificationCompatActivity extends AppCompatActivity {
      * This value needs to be unique within this app, but it doesn't need to be
      * unique system-wide.
      */
-    public static final int NOTIFICATION_ID = 1;
+    public static final int NOTIFICATION_NORMAL_ID = 1;
+    public static final int NOTIFICATION_ACTION_ID = 2;
+    public static final int NOTIFICATION_BIGVIEW_ID = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notication_compat);
+        setContentView(R.layout.layout_notication_compat);
     }
 
     /**
      * Send a sample notification using the NotificationCompat API.
      */
-    public void sendNotification(View view) {
+    public void sendNormalNotification(View view) {
 
         // BEGIN_INCLUDE(build_action)
         /** Create an intent that will be fired when the user clicks the notification.
@@ -94,8 +99,62 @@ public class NotificationCompatActivity extends AppCompatActivity {
          */
         NotificationManager notificationManager = (NotificationManager) getSystemService(
                 NOTIFICATION_SERVICE);
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
+        notificationManager.notify(NOTIFICATION_NORMAL_ID, builder.build());
         // END_INCLUDE(send_notification)
+    }
+
+    public void sendActionNotification(View view) {
+        //create normal notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setContentTitle("Title");
+        builder.setContentText("Description");
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setAutoCancel(true) ;
+        builder.setPriority(NotificationCompat.PRIORITY_LOW) ;
+
+        //add action
+        Intent buttonActionIntent = new Intent(this, ResolveActivity.class);
+        PendingIntent pendingIntentButton = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), buttonActionIntent, 0);
+        NotificationCompat.Action action = new NotificationCompat.Action(R.mipmap.ic_launcher, "Open Action", pendingIntentButton);
+        builder.addAction(action);
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+        builder.setContentIntent(pendingIntent);
+
+        //show notification
+        NotificationManagerCompat.from(this).notify(NOTIFICATION_ACTION_ID, builder.build());
+    }
+
+    public void sendBigViewNotification(View view) {
+        //create normal notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setContentTitle("Title");
+        builder.setContentText("Description");
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setAutoCancel(true) ;
+        builder.setPriority(NotificationCompat.PRIORITY_MAX) ;
+
+        //Create big view
+        NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+        String[] events = new String[6];
+        events[0] = new String("First line....");
+        events[1] = new String("Second line...");
+        events[2] = new String("Third line...");
+        events[3] = new String("4th line...");
+        events[4] = new String("5th line...");
+        events[5] = new String("6th line...");
+
+        // Sets a title for the big view
+        inboxStyle.setBigContentTitle("Big Title");
+        // Add events
+        for (int i = 0; i < events.length; i++) {
+            inboxStyle.addLine(events[i]);
+        }
+
+        builder.setStyle(inboxStyle);
+        //show notification
+        NotificationManagerCompat.from(this).notify(NOTIFICATION_BIGVIEW_ID, builder.build());
     }
 
 }
