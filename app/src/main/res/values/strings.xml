@@ -3,4 +3,7 @@
 
     <string name="activity_intent_resolve">Intent/ResolveActivity</string>
     <string name="launch_resolve_content">Browser Website</string>
+
+
+    <string name="activity_notification_compat">UI/Notification/NotificationCompat</string>
 </resources>
