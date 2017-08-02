@@ -44,6 +44,19 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <!-- ************************************* -->
+        <!-- Content PACKAGE SAMPLES -->
+        <!-- ************************************* -->
+        <activity
+            android:name=".content.RuntimePermissionActivity"
+            android:label="@string/label_runtime_permission">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
