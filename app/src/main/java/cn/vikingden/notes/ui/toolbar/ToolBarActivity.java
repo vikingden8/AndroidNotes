@@ -25,6 +25,8 @@ public class ToolBarActivity extends AppCompatActivity {
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
 
+        
+
     }
 
     // Menu icons are inflated just as they were with actionbar
