@@ -8,6 +8,8 @@
     <string name="activity_notification_compat">UI/Notification/NotificationCompat</string>
     <string name="label_notification_compat">NotificationCompat</string>
 
+    <string name="activity_toolbar">UI/ToolBar</string>
+
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>
     <string name="contacts_string">Total number of contacts: %1$,d\nFirst contact:<b>%2$s</b></string>
