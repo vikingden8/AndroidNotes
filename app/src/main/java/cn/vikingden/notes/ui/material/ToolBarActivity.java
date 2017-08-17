@@ -1,4 +1,4 @@
-package cn.vikingden.notes.ui.toolbar;
+package cn.vikingden.notes.ui.material;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

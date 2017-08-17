@@ -9,6 +9,7 @@
     <string name="label_notification_compat">NotificationCompat</string>
 
     <string name="activity_toolbar">UI/ToolBar</string>
+    <string name="activity_appbar_layout">UI/AppbarLayout</string>
 
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>

@@ -46,7 +46,7 @@
         </activity>
 
         <activity
-            android:name=".ui.toolbar.ToolBarActivity"
+            android:name=".ui.material.ToolBarActivity"
             android:theme="@style/ToolBarActivityTheme"
             android:label="@string/activity_toolbar">
             <intent-filter>
