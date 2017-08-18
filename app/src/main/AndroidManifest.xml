@@ -67,6 +67,18 @@
             </intent-filter>
         </activity>
 
+
+        <activity
+            android:name=".ui.material.CollapsingToolBarLayout"
+            android:theme="@style/ToolBarActivityTheme"
+            android:label="@string/activity_collapsing_toolbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
         <!-- ************************************* -->
         <!-- Content PACKAGE SAMPLES -->
         <!-- ************************************* -->

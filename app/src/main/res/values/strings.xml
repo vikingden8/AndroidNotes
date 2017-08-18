@@ -12,6 +12,10 @@
     <string name="activity_appbar_layout">UI/AppbarLayout</string>
     <string name="appbar_description">AppBarLayout is a vertical LinearLayout which implements many of the features of material designs app bar concept, namely scrolling gestures.
     Children should provide their desired scrolling behavior through setScrollFlags(int) and the associated layout xml attribute: app:layout_scrollFlags.</string>
+    
+    <string name="activity_collapsing_toolbar">UI/CollapsingToolBarLayout</string>
+    
+    
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>
     <string name="contacts_string">Total number of contacts: %1$,d\nFirst contact:<b>%2$s</b></string>
