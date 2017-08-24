@@ -79,6 +79,17 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.material.NavigationDrawerActivity"
+            android:theme="@style/ToolBarActivityTheme"
+            android:label="@string/activity_navigation_drawer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
         <!-- ************************************* -->
         <!-- Content PACKAGE SAMPLES -->
         <!-- ************************************* -->

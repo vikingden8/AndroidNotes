@@ -14,7 +14,10 @@
     Children should provide their desired scrolling behavior through setScrollFlags(int) and the associated layout xml attribute: app:layout_scrollFlags.</string>
     
     <string name="activity_collapsing_toolbar">UI/CollapsingToolBarLayout</string>
-    
+    <string name="activity_navigation_drawer">UI/NavigationDrawer</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
     
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>
