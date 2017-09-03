@@ -18,6 +18,8 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <string name="activity_tab_layout">UI/TabLayout</string>
+
     
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>
