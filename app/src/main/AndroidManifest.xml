@@ -102,6 +102,19 @@
         </activity>
 
         <!-- ************************************* -->
+        <!-- UI/Drawables SAMPLES -->
+        <!-- ************************************* -->
+        <activity
+            android:name=".ui.drawables.VectorDrawableActivity"
+            android:theme="@style/dialog"
+            android:label="@string/ui_drawable_vector_label">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
         <!-- Content PACKAGE SAMPLES -->
         <!-- ************************************* -->
         <activity
@@ -113,6 +126,8 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

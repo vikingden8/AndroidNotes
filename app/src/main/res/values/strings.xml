@@ -20,6 +20,7 @@
 
     <string name="activity_tab_layout">UI/TabLayout</string>
 
+    <string name="ui_drawable_vector_label">UI/Drawables/VectorDrawable</string>
     
     <string name="activity_runtime_permission">Content/Permissions/RuntimePermissions</string>
     <string name="label_runtime_permission">RuntimePermissions</string>
