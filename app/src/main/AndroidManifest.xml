@@ -127,7 +127,18 @@
             </intent-filter>
         </activity>
 
+        <!-- ************************************* -->
+        <!-- Security PACKAGE SAMPLES -->
+        <!-- ************************************* -->
+        <activity
+            android:name=".security.NoScreenShotActivity"
+            android:label="@string/label_security_screenshot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
