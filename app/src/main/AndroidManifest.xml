@@ -139,6 +139,19 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <!-- ************************************* -->
+        <!-- Performance PACKAGE SAMPLES -->
+        <!-- ************************************* -->
+        <activity
+            android:name=".performance.OverDrawActivity"
+            android:label="@string/label_perf_overdraw">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

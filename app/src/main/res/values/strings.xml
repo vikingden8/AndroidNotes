@@ -43,4 +43,7 @@
 
     <!-- for security activities -->
     <string name="label_security_screenshot">Security/No ScreenShot</string>
+
+    <!-- for performance activities -->
+    <string name="label_perf_overdraw">Performance/OverDraw</string>
 </resources>
